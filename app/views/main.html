@@ -1,7 +1,7 @@
 <div class="jumbotron text-center">
 	<h1>Home Page</h1>
 
-	<p>-- {{ main.message }}</p>
+	<p>{{ main.message }}</p>
 </div>
 
 <div class="row marketing">
@@ -9,19 +9,19 @@
   
   <fieldset class="col-md-6">
     <div class="col-xs-6 col-sm-6">
-      <input type="number" class="form-control" ng-model="main.og" name="og" id="og" step="0.001" min="1.03" ng-valid-required>
+      <input type="number" class="form-control" ng-model="main.reading.og" name="og" id="og" step="0.001" min="1.03" ng-change="main.calculateABV()" ng-valid-required>
       <label for="og" class="control-label">Original Gravity</label>
     </div>
     
     <div class="col-xs-6 col-sm-6">
-      <input type="number" class="form-control" name="fg" id="fg" step="0.01" ng-model="main.fg">
+      <input type="number" class="form-control" name="fg" id="fg" step="0.01" ng-model="main.reading.fg" ng-change="main.calculateABV()">
       <label for="fg" class="control-label">Final Gravity</label>
     </div>
           
   </fieldset>
 
   <div class="col-md-6">
-		<h2>{{ main.abv }}</h2>
+		<h2>{{ main.reading.abv }}</h2>
   </div>
 </form>
 
