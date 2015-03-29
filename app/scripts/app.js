@@ -47,7 +47,7 @@ angular
 		vm.calculateABV = function() {
 			console.log(this.reading);
 			if(this.reading.og !== undefined && this.reading.fg !== undefined) {
-				this.reading.abv = this.abvFormula(this.reading);
+				this.reading.abv = this.abvFormula(this.reading).toFixed(2);
 				
 			}
 		}
